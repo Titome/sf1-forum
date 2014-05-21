@@ -7,7 +7,7 @@
     'current_item' => __('All boards'),
 )) ?>
 
-<table class="forum-categories">
+<table class="table table-bordered table-stripped">
     <thead>
         <tr>
             <th><?php echo __('Discussion board') ?></th>

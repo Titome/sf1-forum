@@ -6,15 +6,18 @@
         <?php include_metas() ?>
         <title><?php include_slot('title', __('Forums')) ?></title>
         <link rel="shortcut icon" href="/favicon.ico" />
+        <?php use_stylesheet('/assets/css/bootstrap.min.css') ?>
+        <?php use_stylesheet('/assets/css/bootstrap-theme.min.css') ?>
+        <?php use_javascript('/assets/js/jquery.min.js') ?>
+        <?php use_javascript('/assets/js/bootstrap.min.js') ?>
         <?php include_stylesheets() ?>
-        <?php include_javascripts() ?>
     </head>
     <body>
-        <div id="header">
-            <p>
-                Mon Header
-            </p>
+        <div id="container" class="container">
+            <div class="row col-lg-12">
+                <?php echo $sf_content ?>
+            </div>
         </div>
-        <?php echo $sf_content ?>
+        <?php include_javascripts() ?>
     </body>
 </html>
