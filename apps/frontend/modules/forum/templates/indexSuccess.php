@@ -3,17 +3,9 @@
 
 <h1><?php echo __('Forum Boards') ?></h1>
 
-<ul class="breadcrumb">
-    <li>
-        <?php echo link_to(__('Home'), 'homepage') ?>
-    </li>
-    <li>
-        <?php echo link_to(__('Forum'), 'forum') ?>
-    </li>
-    <li>
-        <?php echo __('All boards') ?>
-    </li>
-</ul>
+<?php include_partial('breadcrumb', array(
+    'current_item' => __('All boards'),
+)) ?>
 
 <table class="forum-categories">
     <thead>
