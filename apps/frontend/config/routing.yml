@@ -3,11 +3,11 @@ homepage:
   param:        { module: main, action: index }
 
 forum:
-  url:          /:sf_culture/forum
-  param:        { module: forum, action: index }
-  requirements: { sf_culture: en|fr }
+  url:          /:sf_culture/forum.:_format
+  param:        { module: forum, action: index, _format: html }
+  requirements: { sf_culture: en|fr, _format: html }
 
 forum_category:
-  url:          /:sf_culture/forum/:category
-  param:        { module: forum, action: category }
-  requirements: { category: "[a-z0-9-]+", sf_culture: en|fr }
+  url:          /:sf_culture/forum/:category.:_format
+  param:        { module: forum, action: category, _format: html }
+  requirements: { category: "[a-z0-9-]+", sf_culture: en|fr, _format: html }
