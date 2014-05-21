@@ -1,0 +1,14 @@
+ForumCategory:
+    actAs:
+        Timestampable:   ~
+        NestedSet:       ~
+        Sluggable:
+            fields:      [ name ]
+    columns:
+        id:              { type: integer, notnull: true, primary: true, autoincrement: true, unsigned: true }
+        name:            { type: string(100), notnull: true }
+        description:     { type: clob }
+        thread_count:    { type: integer(6), unsigned: true, notnull: true, default: 0 }
+        answer_count:    { type: integer(8), unsigned: true, notnull: true, default: 0 }
+        enabled:         { type: boolean, notnull: true, default: true }
+

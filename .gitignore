@@ -1,0 +1,6 @@
+/.idea
+/.DS_Store
+/vendor
+/lib/**/base
+/plugins
+/composer.phar

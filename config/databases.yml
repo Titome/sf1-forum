@@ -1,0 +1,21 @@
+#prod:
+#  doctrine:
+#    class: sfDoctrineDatabase
+#    param:
+#      dsn:      mysql:host=localhost;dbname=sl_formation
+#      username: toto
+#      password: tutu
+
+test:
+  doctrine:
+    class: sfDoctrineDatabase
+    param:
+      dsn:      mysql:host=localhost;dbname=sl_formation_test
+
+all:
+  doctrine:
+    class: sfDoctrineDatabase
+    param:
+      dsn:      mysql:host=localhost;dbname=sl_formation
+      username: root
+      password: ~

@@ -1,0 +1,13 @@
+homepage:
+  url:          /
+  param:        { module: main, action: index }
+
+forum:
+  url:          /:sf_culture/forum
+  param:        { module: forum, action: index }
+  requirements: { sf_culture: en|fr }
+
+forum_category:
+  url:          /:sf_culture/forum/:category
+  param:        { module: forum, action: category }
+  requirements: { category: "[a-z0-9-]+", sf_culture: en|fr }
