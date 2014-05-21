@@ -22,8 +22,7 @@ class ForumCategoryTable extends Doctrine_Table
     public function getCategory($slug)
     {
         $q = $this
-            ->createQuery('c')
-            ->where('c.enabled = ?', true)
+            ->addActiveCategoryQuery()
             ->andWhere('c.slug = ?', $slug)
         ;
 
@@ -38,12 +37,23 @@ class ForumCategoryTable extends Doctrine_Table
     public function getRootCategories()
     {
         $q = $this
-            ->createQuery('c')
-            ->where('c.level = ?', 0)
-            ->andWhere('c.enabled = ?', true)
+            ->addActiveCategoryQuery()
+            ->andWhere('c.level = ?', 0)
             ->orderBy('c.name ASC')
         ;
 
         return $q->execute();
+    }
+
+    private function addActiveCategoryQuery(Doctrine_Query $q = null)
+    {
+        if (null === $q) {
+            $q = $this->createQuery('c');
+        }
+
+        $alias = $q->getRootAlias();
+        $q->andWhere($alias.'.enabled = ?', true);
+        
+        return $q;
     }
 }
