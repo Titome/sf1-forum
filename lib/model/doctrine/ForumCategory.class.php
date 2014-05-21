@@ -2,6 +2,18 @@
 
 class ForumCategory extends BaseForumCategory
 {
+    public function getLastMessage()
+    {
+        
+    }
+
+    public function getLastAuthor()
+    {
+        if ($message = $this->getLastMessage()) {
+            return $message->getAuthor();
+        }
+    }
+
     public function enable()
     {
         if (!$this->isEnabled()) {

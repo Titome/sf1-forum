@@ -2,14 +2,11 @@
 
 class forumActions extends sfActions
 {
-    /**
-     * Executes index action
-     *
-     * @param sfRequest $request A request object
-     */
-    public function executeIndex(sfWebRequest $request)
+    public function executeIndex()
     {
-    
+        $table = ForumCategoryTable::getInstance();
+
+        $this->categories = $table->getRootCategories();
     }
 
     public function executeCategory(sfWebRequest $request)
