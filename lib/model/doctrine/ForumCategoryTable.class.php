@@ -38,7 +38,7 @@ class ForumCategoryTable extends Doctrine_Table
     {
         $q = $this
             ->addActiveCategoryQuery()
-            ->andWhere('c.level = ?', 0)
+            ->andWhere('c.level = ?', 1)
             ->orderBy('c.name ASC')
         ;
 

@@ -7,3 +7,9 @@
     'current_item' => $category->getName(),
     'categories'   => $category->getParents(),
 )) ?>
+
+<?php if ($category->hasChildren()) : ?>
+    <?php include_partial('categories', array(
+        'categories' => $category->getNearestChildren(),
+    )) ?>
+<?php endif ?>

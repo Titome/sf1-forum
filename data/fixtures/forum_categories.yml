@@ -1,69 +1,72 @@
 ForumCategory:
-    programming:
-        name:      "Web Programming"
+    forums:
+        name:      "Forums"
         children:
-            html_programming:
-                name:      "HTML & CSS"
+            programming:
+                name:      "Web Programming"
                 children:
-                    html5:
-                        name:      "HTML 5"
-                        children:  []
-                    css3:
-                        name:      "CSS 3"
-                        children:  []
-            
-            # JavaScript Categories
-            javascript_programming:
-                name:      "JavaScript & Frameworks"
+                    html_programming:
+                        name:      "HTML & CSS"
+                        children:
+                            html5:
+                                name:      "HTML 5"
+                                children:  []
+                            css3:
+                                name:      "CSS 3"
+                                children:  []
+                    
+                    # JavaScript Categories
+                    javascript_programming:
+                        name:      "JavaScript & Frameworks"
+                        children:
+                            javascript:
+                                name:      "JavaScript"
+                                children:  []
+                            jquery:
+                                name:      "jQuery & jQuery UI"
+                                children:  []
+                            mootools:
+                                name:      "Mootools"
+                                children:  []
+        
+                    # PHP Categories
+                    php_programming:
+                        name:      "PHP Development"
+                        children:
+                            php_mysql:
+                                name:        "PHP & MySQL"
+                                description: "Discuss about PHP & MySQL development."
+                                children:  []
+                            symfony:
+                                name:        "Symfony Framework"
+                                description: "Discuss about Symfony framework and bundles."
+                                children:  []
+                            zend:
+                                name:        "Zend Framework"
+                                description: "Discuss about Zend framework and modules."
+                                children:  []
+                            laravel:
+                                name:        "Laravel Framework"
+                                description: "Discuss about Laravel framework."
+                                enabled:     false
+                                children:  []
+        
+            arts:
+                name:      "Arts"
                 children:
-                    javascript:
-                        name:      "JavaScript"
+                    graphic_design:
+                        name:      "Graphic Design"
                         children:  []
-                    jquery:
-                        name:      "jQuery & jQuery UI"
+                    video_design:
+                        name:      "Video Design"
                         children:  []
-                    mootools:
-                        name:      "Mootools"
+                    sound_design:
+                        name:      "Sound Design"
                         children:  []
-
-            # PHP Categories
-            php_programming:
-                name:      "PHP Development"
-                children:
-                    php_mysql:
-                        name:        "PHP & MySQL"
-                        description: "Discuss about PHP & MySQL development."
+                    music:
+                        name:      "Music & Festivals"
                         children:  []
-                    symfony:
-                        name:        "Symfony Framework"
-                        description: "Discuss about Symfony framework and bundles."
+                    cinema:
+                        name:      "Cinema & Movies"
+                        enabled:   false
                         children:  []
-                    zend:
-                        name:        "Zend Framework"
-                        description: "Discuss about Zend framework and modules."
-                        children:  []
-                    laravel:
-                        name:        "Laravel Framework"
-                        description: "Discuss about Laravel framework."
-                        enabled:     false
-                        children:  []
-
-    arts:
-        name:      "Arts"
-        children:
-            graphic_design:
-                name:      "Graphic Design"
-                children:  []
-            video_design:
-                name:      "Video Design"
-                children:  []
-            sound_design:
-                name:      "Sound Design"
-                children:  []
-            music:
-                name:      "Music & Festivals"
-                children:  []
-            cinema:
-                name:      "Cinema & Movies"
-                enabled:   false
-                children:  []

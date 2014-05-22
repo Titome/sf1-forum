@@ -25,6 +25,32 @@ class ForumCategory extends BaseForumCategory
         return $parents;
     }
 
+    public function getChildren($depth = null)
+    {
+        if (!$this->hasChildren()) {
+            return array();
+        }
+
+        /** @var Doctrine_Node_NestedSet $node */
+        $node = $this->getNode();
+        $children = array();
+        foreach ($node->getDescendants($depth) as $child) {
+            $children[] = $child;
+        }
+
+        return $children;
+    }
+ 
+    public function getNearestChildren()
+    {
+        return $this->getChildren(1);
+    }
+
+    public function hasChildren()
+    {
+        return $this->getNode()->hasChildren();
+    }
+
     public function getLastMessage()
     {
         
