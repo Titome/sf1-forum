@@ -26,3 +26,21 @@ ForumThread:
         solved:      true
         created_at:  "2014-02-23 09:20:10"
         updated_at:  "2014-02-25 15:42:18"
+
+<?php for ($i = 10; $i <= 40; $i++) : ?>
+
+    thread_<?php echo $i ?>:
+        Author:      hugo_hamon
+        Board:       symfony
+        title:       "A random thread #<?php echo $i ?> for pagination"
+        raw_content: |
+            Lorem ipsum dolor sit amet, **consectetur adipiscing** elit. Curabitur aliquam sed mi vitae adipiscing. Nullam sed orci adipiscing, tristique nisl ac, luctus mi. Aenean dignissim eros tortor, quis tincidunt arcu consequat ut. Maecenas diam libero, sollicitudin at felis non, ornare luctus ante. Nullam id risus magna. Etiam nec consectetur ipsum. Vivamus rhoncus pellentesque eros sit amet dignissim.
+            
+            Vestibulum ut augue ac risus lobortis `tincidunt sit` amet eu sem. Pellentesque eget lectus lectus. Aliquam adipiscing risus at lorem elementum mollis. Sed hendrerit faucibus sagittis. Aliquam ut blandit dui. Suspendisse imperdiet arcu at ipsum laoreet fringilla. Sed convallis mauris sed orci ultricies sollicitudin. Praesent nec aliquet tortor, in consectetur eros. Suspendisse eget tempor massa. Aenean mattis urna vel condimentum malesuada. 
+        views_count: <?php echo mt_rand(1, 999999)."\n" ?>
+        closed:      <?php echo mt_rand(0, 1) ? 'true' : 'false' ?><?php echo "\n" ?>
+        solved:      <?php echo mt_rand(0, 1) ? 'true' : 'false' ?><?php echo "\n" ?>
+        created_at:  "2013-10-<?php echo mt_rand(10, 31) ?> 10:00:00"
+
+<?php endfor ?>
+

@@ -51,3 +51,46 @@
     </tbody>
 </table>
 
+<?php if ($pager->haveToPaginate()) : ?>
+<ul class="pagination">
+    <li>
+        <?php echo link_to('««', 'forum_category', array(
+            'category' => $category->getSlug(),
+        )) ?>
+    </li>
+    <li>
+        <?php echo link_to('«', 'forum_category', array(
+            'category' => $category->getSlug(),
+            'page'     => $pager->getPreviousPage(),
+        )) ?>
+    </li>
+
+    <?php foreach ($pager->getLinks(7) as $page) : ?>
+    <li class="<?php echo $page == $pager->getPage() ? 'active' : 'page' ?>">
+        <?php if ($page == $pager->getPage()) : ?>
+            <span><?php echo $page ?></span>
+        <?php else : ?>
+            <?php echo link_to($page, 'forum_category', array(
+                'category' => $category->getSlug(),
+                'page'     => $page,
+            )) ?>
+        <?php endif ?>
+    </li>
+    <?php endforeach ?>
+
+    <li>
+        <?php echo link_to('»', 'forum_category', array(
+            'category' => $category->getSlug(),
+            'page'     => $pager->getNextPage(),
+        )) ?>
+    </li>
+
+    <li>
+        <?php echo link_to('»»', 'forum_category', array(
+            'category' => $category->getSlug(),
+            'page'     => $pager->getLastPage(),
+        )) ?>
+    </li>
+
+</ul>
+<?php endif ?>
