@@ -2,6 +2,15 @@
 
 class ForumThread extends BaseForumThread
 {
+    public function getCategoriesTree()
+    {
+        $board  = $this->getBoard();
+        $boards = $board->getParents();
+        $boards[] = $board;
+
+        return $boards;
+    }
+
     public function isSolved()
     {
         return $this->_get('solved');

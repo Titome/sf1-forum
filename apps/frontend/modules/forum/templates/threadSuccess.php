@@ -3,6 +3,7 @@
 
 <?php include_partial('breadcrumb', array(
     'current_item' => $thread->getTitle(),
+    'categories'   => $thread->getCategoriesTree(),
 )) ?>
 
 <div class="panel panel-info">
@@ -30,6 +31,14 @@
 
 <hr/>
 
+<?php if ($pager->haveToPaginate()) : ?>
+    <?php include_partial('global/pagination', array(
+        'pager'  => $pager,
+        'route'  => 'forum_thread',
+        'params' => array('thread' => $thread->getSlug()),
+    )) ?>
+<?php endif ?>
+
 <?php foreach ($answers as $answer) : ?>
 <div class="panel panel-default">
     <div class="panel-body">
@@ -51,3 +60,12 @@
     </div>
 </div>
 <?php endforeach ?>
+
+<?php if ($pager->haveToPaginate()) : ?>
+    <?php include_partial('global/pagination', array(
+        'pager'  => $pager,
+        'route'  => 'forum_thread',
+        'params' => array('thread' => $thread->getSlug()),
+    )) ?>
+<?php endif ?>
+
