@@ -15,6 +15,10 @@
                 <?php echo link_to($category->getName(), 'forum_category', array(
                     'category' => $category->getSlug(),
                 )) ?>
+                <?php if ($category->getDescription()) : ?>
+                    <br/>
+                    <small><?php echo $category->getDescription() ?></small>
+                <?php endif ?>
             </td>
             <td><?php echo format_number($category->getThreadCount()) ?></td>
             <td><?php echo format_number($category->getAnswerCount()) ?></td>
