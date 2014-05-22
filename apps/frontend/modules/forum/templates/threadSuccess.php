@@ -27,3 +27,27 @@
         </em>
     </div>
 </div>
+
+<hr/>
+
+<?php foreach ($answers as $answer) : ?>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <?php echo $answer->getHtmlContent(ESC_RAW) ?>
+    </div>
+    <div class="panel-footer">
+        <em>
+            <?php echo __('Written by %author% on %date%.', array(
+                '%author%' => (string) $thread->getAuthor(),
+                '%date%'   => format_datetime($thread->getCreatedAt()),
+            )) ?>
+            <br/>
+            <?php echo format_number_choice(
+                '[0]|[1]This answer has been found useful by one person.|(1,+Inf]This answer has been found useful by %count% persons.',
+                array('%count%'  => format_number($answer->getHelpful())),
+                $answer->getHelpful()
+            ) ?>
+        </em>
+    </div>
+</div>
+<?php endforeach ?>
