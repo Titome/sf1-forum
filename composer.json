@@ -6,6 +6,7 @@
         "j20/php-uuid": "dev-master",
         "lexpress/doctrine1": "dev-master",
         "lexpress/symfony1": "1.5.x-dev",
-        "lexpress/sf-doctrine-guard-plugin": "dev-master"
+        "lexpress/sf-doctrine-guard-plugin": "dev-master",
+        "kzykhys/ciconia": "1.1.*@dev"
     }
 }
