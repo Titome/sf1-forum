@@ -1,4 +1,7 @@
 {
+    "name": "hhamon/sf1-forum",
+    "description": "A simple forum bulletin board application",
+    "license": "MIT",
     "require": {
         "lexpress/doctrine1": "dev-master",
         "lexpress/symfony1": "1.5.x-dev",
