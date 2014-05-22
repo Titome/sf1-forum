@@ -1,0 +1,47 @@
+ForumAnswer:
+
+    answer_1_1:
+        Author:      paul_jones
+        Thread:      thread_1
+        uuid:        b8b3314e-e193-11e3-b98f-82687f4fc15c
+        raw_content: |
+            Lorem ipsum dolor sit amet, **consectetur adipiscing** elit. Curabitur aliquam sed mi vitae adipiscing. Nullam sed orci adipiscing, tristique nisl ac, luctus mi. Aenean dignissim eros tortor, quis tincidunt arcu consequat ut. Maecenas diam libero, sollicitudin at felis non, ornare luctus ante. Nullam id risus magna. Etiam nec consectetur ipsum. Vivamus rhoncus pellentesque eros sit amet dignissim.
+            
+            Vestibulum ut augue ac risus lobortis `tincidunt sit` amet eu sem. Pellentesque eget lectus lectus. Aliquam adipiscing risus at lorem elementum mollis. Sed hendrerit faucibus sagittis. Aliquam ut blandit dui. Suspendisse imperdiet arcu at ipsum laoreet fringilla. Sed convallis mauris sed orci ultricies sollicitudin. Praesent nec aliquet tortor, in consectetur eros. Suspendisse eget tempor massa. Aenean mattis urna vel condimentum malesuada. 
+        helpful:      254
+        created_at:  "2014-03-12 14:13:00"
+        updated_at:  "2014-03-12 14:13:00"
+
+    answer_1_2:
+        Author:      hugo_hamon
+        Thread:      thread_1
+        uuid:        bb7a09d4-e193-11e3-b98f-82687f4fc15c
+        raw_content: |
+            Lorem ipsum dolor sit amet, **consectetur adipiscing** elit. Curabitur aliquam sed mi vitae adipiscing. Nullam sed orci adipiscing, tristique nisl ac, luctus mi. Aenean dignissim eros tortor, quis tincidunt arcu consequat ut. Maecenas diam libero, sollicitudin at felis non, ornare luctus ante. Nullam id risus magna. Etiam nec consectetur ipsum. Vivamus rhoncus pellentesque eros sit amet dignissim.
+            
+            Vestibulum ut augue ac risus lobortis `tincidunt sit` amet eu sem. Pellentesque eget lectus lectus. Aliquam adipiscing risus at lorem elementum mollis. Sed hendrerit faucibus sagittis. Aliquam ut blandit dui. Suspendisse imperdiet arcu at ipsum laoreet fringilla. Sed convallis mauris sed orci ultricies sollicitudin. Praesent nec aliquet tortor, in consectetur eros. Suspendisse eget tempor massa. Aenean mattis urna vel condimentum malesuada. 
+        helpful:      15
+        created_at:  "2014-03-13 08:10:00"
+        updated_at:  "2014-03-13 08:10:00"
+                
+    answer_1_3:
+        Author:      john_smith
+        Thread:      thread_1
+        uuid:        c404a578-e193-11e3-b98f-82687f4fc15c
+        raw_content: |
+            Lorem ipsum dolor sit amet, **consectetur adipiscing** elit. Curabitur aliquam sed mi vitae adipiscing. Nullam sed orci adipiscing, tristique nisl ac, luctus mi. Aenean dignissim eros tortor, quis tincidunt arcu consequat ut. Maecenas diam libero, sollicitudin at felis non, ornare luctus ante. Nullam id risus magna. Etiam nec consectetur ipsum. Vivamus rhoncus pellentesque eros sit amet dignissim.
+            
+            Vestibulum ut augue ac risus lobortis `tincidunt sit` amet eu sem. Pellentesque eget lectus lectus. Aliquam adipiscing risus at lorem elementum mollis. Sed hendrerit faucibus sagittis. Aliquam ut blandit dui. Suspendisse imperdiet arcu at ipsum laoreet fringilla. Sed convallis mauris sed orci ultricies sollicitudin. Praesent nec aliquet tortor, in consectetur eros. Suspendisse eget tempor massa. Aenean mattis urna vel condimentum malesuada.
+        created_at:  "2014-03-13 11:32:00"
+        updated_at:  "2014-03-13 11:32:00"
+
+    answer_2_1:
+        Author:      john_smith
+        Thread:      thread_2
+        uuid:        cda6ad2e-e193-11e3-b98f-82687f4fc15c
+        raw_content: |
+            Lorem ipsum dolor sit amet, **consectetur adipiscing** elit. Curabitur aliquam sed mi vitae adipiscing. Nullam sed orci adipiscing, tristique nisl ac, luctus mi. Aenean dignissim eros tortor, quis tincidunt arcu consequat ut. Maecenas diam libero, sollicitudin at felis non, ornare luctus ante. Nullam id risus magna. Etiam nec consectetur ipsum. Vivamus rhoncus pellentesque eros sit amet dignissim.
+            
+            Vestibulum ut augue ac risus lobortis `tincidunt sit` amet eu sem. Pellentesque eget lectus lectus. Aliquam adipiscing risus at lorem elementum mollis. Sed hendrerit faucibus sagittis. Aliquam ut blandit dui. Suspendisse imperdiet arcu at ipsum laoreet fringilla. Sed convallis mauris sed orci ultricies sollicitudin. Praesent nec aliquet tortor, in consectetur eros. Suspendisse eget tempor massa. Aenean mattis urna vel condimentum malesuada.
+        created_at:  "2014-02-24 18:45:00"
+        updated_at:  "2014-02-24 18:45:00"
