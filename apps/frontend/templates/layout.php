@@ -20,5 +20,6 @@
             </div>
         </div>
         <?php include_javascripts() ?>
+        <?php include_slot('javascripts') ?>
     </body>
 </html>

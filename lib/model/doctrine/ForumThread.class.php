@@ -21,10 +21,17 @@ class ForumThread extends BaseForumThread
         return $this->_get('closed');
     }
 
-    public function incrementAnswerCount()
+    public function incrementViewsCount($step = 1)
+    {
+        $count = (int) $this->getViewsCount();
+        $this->setViewsCount($count + $step);
+        $this->save();
+    }
+
+    public function incrementAnswerCount($step = 1)
     {
         $count = (int) $this->getAnswerCount();
-        $this->setAnswerCount($count + 1);
+        $this->setAnswerCount($count + $step);
         $this->save();
     }
 }

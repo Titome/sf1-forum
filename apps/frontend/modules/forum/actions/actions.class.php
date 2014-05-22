@@ -48,4 +48,20 @@ class forumActions extends sfActions
         );
         $this->answers = $this->pager->getResults();
     }
+
+    public function executeIncrementThreadViews(sfWebRequest $request)
+    {
+        $this->forward404Unless($request->isXmlHttpRequest());
+
+        $thread = $this->threadTable->getThread($request->getParameter('thread'));
+        $this->forward404Unless($thread);
+
+        $thread->incrementViewsCount();
+
+        $response = $this->getResponse();
+        $response->setContentType('application/json');
+        $response->setContent(json_encode($thread->toArray(false)));
+
+        return sfView::NONE;
+    }
 }

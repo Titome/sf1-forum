@@ -7,6 +7,12 @@ forum_thread:
   param:        { module: forum, action: thread, _format: html }
   requirements: { thread: "[a-z0-9-]+", sf_culture: en|fr, _format: html }
 
+forum_thread_incviews:
+  class:        sfRequestRoute
+  url:          /thread/:thread
+  param:        { module: forum, action: incrementThreadViews }
+  requirements: { thread: "[a-z0-9-]+", sf_method: [ POST, PUT ] }
+
 forum:
   url:          /:sf_culture/forum.:_format
   param:        { module: forum, action: index, _format: html }

@@ -1,6 +1,14 @@
 <?php use_helper('I18N', 'Number', 'Text', 'Date') ?>
 <?php slot('title', $thread->getTitle()) ?>
 
+<?php slot('javascripts') ?>
+<script type="text/javascript">
+$(document).ready(function () {
+  $.post("<?php echo url_for('forum_thread_incviews', array('thread' => $thread->getUuid())) ?>");
+});
+</script>
+<?php end_slot() ?>
+
 <?php include_partial('breadcrumb', array(
     'current_item' => $thread->getTitle(),
     'categories'   => $thread->getCategoriesTree(),
