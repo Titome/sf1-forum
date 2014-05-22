@@ -12,3 +12,59 @@ ForumCategory:
         answer_count:    { type: integer(8), unsigned: true, notnull: true, default: 0 }
         enabled:         { type: boolean, notnull: true, default: true }
 
+
+ForumMessage:
+    actAs:
+        Timestampable:    ~
+    columns:
+        id:               { type: integer, notnull: true, primary: true, autoincrement: true, unsigned: true }
+        uuid:             { type: string(36), notnull: true, unique: true }
+        raw_content:      { type: clob, notnull: true }
+        html_content:     { type: clob, notnull: true }
+
+ForumThread:
+    inheritance:
+        extends:          ForumMessage
+        type:             concrete
+    actAs:
+        Sluggable:
+            fields:       [ title ]
+    columns:
+        board_id:         { type: integer, notnull: true, unsigned: true }
+        author_id:        { type: integer, notnull: true }
+        title:            { type: string(100), notnull: true }
+        views_count:      { type: integer, notnull: true, unsigned: true, default: 1 }
+        answer_count:     { type: integer, notnull: true, unsigned: true, default: 0 }
+        solved:           { type: boolean, notnull: true, default: false }
+        closed:           { type: boolean, notnull: true, default: false }
+    relations:
+        Author:
+            class:        sfGuardUser
+            local:        author_id
+            foreign:      id
+            foreignAlias: Threads
+        Board:
+            class:        ForumCategory
+            local:        board_id
+            foreign:      id
+            foreignAlias: Threads
+
+ForumAnswer:
+    inheritance:
+        extends:          ForumMessage
+        type:             concrete
+    columns:
+        thread_id:        { type: integer, notnull: true, unsigned: true }
+        author_id:        { type: integer, notnull: true }
+        helpful:          { type: integer, notnull: true, unsigned: true, default: 0 }
+    relations:
+        Author:
+            class:        sfGuardUser
+            local:        author_id
+            foreign:      id
+            foreignAlias: Answers
+        Thread:
+            class:        ForumThread
+            local:        thread_id
+            foreign:      id
+            foreignAlias: Answers
