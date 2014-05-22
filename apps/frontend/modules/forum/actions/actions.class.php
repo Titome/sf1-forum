@@ -8,10 +8,14 @@ class forumActions extends sfActions
     /** @var ForumThreadTable */
     private $threadTable;
 
+    /** @var ForumAnswerTable */
+    private $answerTable;
+
     public function preExecute()
     {
         $this->categoryTable = ForumCategoryTable::getInstance();
         $this->threadTable   = ForumThreadTable::getInstance();
+        $this->answerTable   = ForumAnswerTable::getInstance();
     }
 
     public function executeIndex()
@@ -30,5 +34,18 @@ class forumActions extends sfActions
             $this->category
         );
         $this->threads = $this->pager->getResults();
+    }
+
+    public function executeThread(sfWebRequest $request)
+    {
+        $this->thread = $this->threadTable->getThread($request->getParameter('thread'));
+        $this->forward404Unless($this->thread);
+
+        $this->pager  = $this->answerTable->getPaginatedAnswers(
+            $request->getGetParameter('page', 1),
+            sfConfig::get('app_answers_max_per_page'),
+            $this->thread
+        );
+        $this->answers = $this->pager->getResults();
     }
 }

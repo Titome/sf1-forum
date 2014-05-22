@@ -2,6 +2,25 @@
 
 class ForumThreadTable extends ForumMessageTable
 {
+    /**
+     * Returns a thread by its unique identifier.
+     *
+     * @param string $identifier The slug or the UUID
+     * @return ForumThread
+     */
+    public function getThread($identifier)
+    {
+        $q = $this
+            ->createQuery('t')
+            ->leftJoin('t.Author a')
+            ->leftJoin('t.Board b')
+            ->where('t.slug = ?', $identifier)
+            ->orWhere('t.uuid = ?', $identifier)
+        ;
+
+        return $q->fetchOne();
+    }
+
     public function getPaginatedThreads($page, $maxPerPage, ForumCategory $board = null)
     {
         $query = $this->createQuery('t');
@@ -14,20 +33,6 @@ class ForumThreadTable extends ForumMessageTable
         $query->orderBy('t.updated_at DESC');
 
         return $this->createPager($page, $maxPerPage, $query);
-    }
-
-    private function createPager($page, $maxPerPage, Doctrine_Query $query = null)
-    {
-        $pager = new sfDoctrinePager('ForumThread', $maxPerPage);
-        $pager->setPage((int) $page);
-
-        if ($query) {
-            $pager->setQuery($query);
-        }
-
-        $pager->init();
-
-        return $pager;
     }
 
     /**

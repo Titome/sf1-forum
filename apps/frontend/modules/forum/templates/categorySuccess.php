@@ -1,8 +1,6 @@
 <?php use_helper('I18N', 'Number', 'Text', 'Date') ?>
 <?php slot('title', $category->getName()) ?>
 
-<h1><?php echo $category ?></h1>
-
 <?php include_partial('breadcrumb', array(
     'current_item' => $category->getName(),
     'categories'   => $category->getParents(),
@@ -42,7 +40,7 @@
                 <span title="<?php echo $thread->isSolved() ? 'Solved' : 'Unsolved' ?>" 
                       class="glyphicon glyphicon-<?php echo $thread->isSolved() ? 'ok' : 'remove' ?>"></span>
             </td>
-            <td><?php echo $thread->getTitle() ?></td>
+            <td><?php echo link_to($thread->getTitle(), 'forum_thread', array('thread' => $thread->getSlug())) ?></td>
             <td><?php echo $thread->getAuthor() ?></td>
             <td><?php echo format_number($thread->getAnswerCount()) ?></td>
             <td><?php echo format_datetime($thread->getUpdatedAt()) ?></td>

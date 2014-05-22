@@ -2,6 +2,11 @@ homepage:
   url:          /
   param:        { module: main, action: index }
 
+forum_thread:
+  url:          /:sf_culture/forum/thread/:thread.:_format
+  param:        { module: forum, action: thread, _format: html }
+  requirements: { thread: "[a-z0-9-]+", sf_culture: en|fr, _format: html }
+
 forum:
   url:          /:sf_culture/forum.:_format
   param:        { module: forum, action: index, _format: html }

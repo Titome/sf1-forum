@@ -15,6 +15,7 @@
     <body>
         <div id="container" class="container">
             <div class="row col-lg-12">
+                <h1><?php include_slot('title', __('Forums')) ?></h1>
                 <?php echo $sf_content ?>
             </div>
         </div>
