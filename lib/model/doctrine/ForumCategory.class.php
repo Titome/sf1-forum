@@ -2,6 +2,35 @@
 
 class ForumCategory extends BaseForumCategory
 {
+    public function getParentRoot()
+    {
+        /** @var Doctrine_Node_NestedSet $node */
+        $node = $this->getNode();
+        if ($node->isRoot()) {
+            return $this;
+        }
+
+        $ancestors = $this->getAncestors();
+
+        return array_pop($ancestors);
+    }
+
+    public function getChildrenPks()
+    {
+        $node = $this->getNode();
+        $descendants = $node->getDescendants();
+        if (false === $descendants) {
+            return array();
+        }
+
+        $pks = array();
+        foreach ($descendants as $descendant) {
+            $pks[] = $descendant->getId();
+        }
+
+        return $pks;
+    }
+
     public function openThread(sfGuardUser $author)
     {
         $thread = new ForumThread();
@@ -9,6 +38,20 @@ class ForumCategory extends BaseForumCategory
         $thread->setAuthor($author);
         
         return $thread;
+    }
+
+    public function incrementThreadCount($step = 1, $recursive = true)
+    {
+        $count = $this->getThreadCount();
+        $count+= $step;
+        $this->setThreadCount($count);
+        $this->save();
+
+        if ($recursive) {
+            foreach ($this->getParents() as $parent) {
+                $parent->incrementThreadCount($step, false);
+            }
+        }
     }
 
     /**
@@ -34,6 +77,17 @@ class ForumCategory extends BaseForumCategory
         return $parents;
     }
 
+    public function getAncestors()
+    {
+        $ancestors = array();
+        $node = $this->getNode();
+        if ($parent = $node->getParent()) {
+            $ancestors[] = $parent;
+            $ancestors = array_merge($ancestors, $parent->getAncestors());
+        }
+        return $ancestors;
+    }
+    
     public function getChildren($depth = null)
     {
         if (!$this->hasChildren()) {

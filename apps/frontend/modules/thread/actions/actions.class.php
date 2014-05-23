@@ -16,7 +16,9 @@ class threadActions extends sfActions
         $this->forward404Unless($this->category);
 
         $this->thread = $this->category->openThread($this->getGuardUser());
-        $this->form = new ForumThreadForm($this->thread);
+        $this->form = new ForumThreadForm($this->thread, array(
+            'board_table' => $this->categoryTable,
+        ));
         if ($request->isMethod('POST')) {
             $this->form->bind($request->getPostParameter($this->form->getName()));
             if ($this->form->isValid()) {

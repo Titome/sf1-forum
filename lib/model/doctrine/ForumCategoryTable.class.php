@@ -12,6 +12,30 @@ class ForumCategoryTable extends Doctrine_Table
         return Doctrine_Core::getTable('ForumCategory');
     }
 
+    public function getThreadCount(ForumCategory $category)
+    {
+        $pks = $category->getChildrenPks();
+        $pks[] = $category->getId();
+
+        $q = Doctrine_Query::create()
+            ->from('ForumThread t')
+            ->whereIn('t.board_id', $pks)
+        ;
+
+        return (int) $q->count();
+    }
+
+    public function updateThreadCount(ForumCategory $category)
+    {
+        /** @var Doctrine_Node_NestedSet $node */
+        $node = $category->getNode();
+        foreach ($node->getDescendants() as $descendant) {
+            $total = $this->getThreadCount($descendant);
+            $descendant->setThreadCount($total);
+            $descendant->save();
+        }
+    }
+    
     /**
      * Retrieves one active category with its slug.
      *
