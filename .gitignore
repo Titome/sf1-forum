@@ -2,6 +2,6 @@
 /cache
 /log
 /lib/**/base
-/plugins
+/plugins/sfDoctrineGuardPlugin
 /composer.phar
 /web/*Plugin
