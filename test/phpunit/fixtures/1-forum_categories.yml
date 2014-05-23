@@ -1,9 +1,11 @@
 ForumCategory:
     forums:
         name:      "Forums"
+        slug:      "forums"
         children:
             programming:
                 name:      "Web Programming"
+                slug:      "web-programming"
                 children:
                     html_programming:
                         name:      "HTML & CSS"
@@ -32,6 +34,7 @@ ForumCategory:
                     # PHP Categories
                     php_programming:
                         name:      "PHP Development"
+                        slug:      "php-programming"
                         children:
                             php_mysql:
                                 name:        "PHP & MySQL"
@@ -54,6 +57,7 @@ ForumCategory:
         
             arts:
                 name:      "Arts"
+                slug:      "arts"
                 children:
                     graphic_design:
                         name:      "Graphic Design"

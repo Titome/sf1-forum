@@ -1,5 +1,7 @@
 /vendor
 /cache
+/coverage
+/clover.xml
 /log
 /lib/**/base
 /plugins/sfDoctrineGuardPlugin
