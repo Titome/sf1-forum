@@ -1,6 +1,6 @@
 <?php
 
-require_once dirname(__FILE__) . '/../../sfDatabaseTestCase.php';
+require_once dirname(__FILE__) . '/../../../sfDatabaseTestCase.php';
 
 class ForumCategoryTest extends sfDatabaseTestCase
 {
