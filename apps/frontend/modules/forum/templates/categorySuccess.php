@@ -1,4 +1,3 @@
-<?php use_helper('I18N', 'Number', 'Text', 'Date') ?>
 <?php slot('title', $category->getName()) ?>
 
 <?php include_partial('breadcrumb', array(
@@ -17,6 +16,15 @@
 <?php endif ?>
 
 <h2><?php echo __('Current threads') ?></h2>
+
+<p>
+    <?php echo link_to(
+        __('Open new thread'),
+        'forum_new_thread',
+        array('board' => $category->getSlug()),
+        array('class' => 'btn btn-default')
+    ) ?>
+</p>
 
 <table class="table table-bordered table-stripped">
     <thead>

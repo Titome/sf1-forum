@@ -1,4 +1,3 @@
-<?php use_helper('I18N', 'Number', 'Text', 'Date') ?>
 <?php slot('title', $thread->getTitle()) ?>
 
 <?php slot('javascripts') ?>

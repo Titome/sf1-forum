@@ -1,0 +1,8 @@
+deleteThread:
+  credentials: [[ admin, moderator ]]
+
+deleteAnswer:
+  credentials: [[ admin, moderator ]]
+
+all:
+  is_secure: true

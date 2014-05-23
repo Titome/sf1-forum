@@ -2,6 +2,11 @@ homepage:
   url:          /
   param:        { module: main, action: index }
 
+forum_new_thread:
+  url:          /:sf_culture/forum/thread/new
+  param:        { module: thread, action: newThread }
+  requirements: { sf_method: [ GET, POST ] }
+
 forum_thread:
   url:          /:sf_culture/forum/thread/:thread.:_format
   param:        { module: forum, action: thread, _format: html }

@@ -21,6 +21,10 @@ class ForumCategoryTable extends Doctrine_Table
      */
     public function getCategory($slug)
     {
+        if (empty($slug)) {
+            return false;
+        }
+
         $q = $this
             ->addActiveCategoryQuery()
             ->andWhere('c.slug = ?', $slug)

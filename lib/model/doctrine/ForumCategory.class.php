@@ -2,6 +2,15 @@
 
 class ForumCategory extends BaseForumCategory
 {
+    public function openThread(sfGuardUser $author)
+    {
+        $thread = new ForumThread();
+        $thread->setBoard($this);
+        $thread->setAuthor($author);
+        
+        return $thread;
+    }
+
     /**
      * Returns the list of parent categories.
      *

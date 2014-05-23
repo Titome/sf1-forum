@@ -15,6 +15,17 @@
     <body>
         <div id="container" class="container">
             <div class="row col-lg-12">
+                <div class="header">
+                    <ul>
+                    <?php if ($sf_user->isAuthenticated()) : ?>
+                        <li><?php echo $sf_user ?></li> 
+                        <li><?php echo link_to(__('Signout'), 'sf_guard_signout') ?></li>
+                    <?php else : ?>
+                        <li><?php echo link_to(__('Signin'), 'sf_guard_signin') ?></li>
+                        <li><?php echo link_to(__('Signup'), 'sf_guard_register') ?></li>
+                    <?php endif ?>
+                    </ul>
+                </div>
                 <h1><?php include_slot('title', __('Forums')) ?></h1>
                 <?php echo $sf_content ?>
             </div>
