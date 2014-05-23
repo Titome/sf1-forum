@@ -2,6 +2,9 @@
     "name": "hhamon/sf1-forum",
     "description": "A simple forum bulletin board application",
     "license": "MIT",
+    "require-dev": {
+        "phpunit/phpunit": "~4.1"
+    },
     "require": {
         "j20/php-uuid": "dev-master",
         "lexpress/doctrine1": "dev-master",
