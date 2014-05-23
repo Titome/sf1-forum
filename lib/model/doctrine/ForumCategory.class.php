@@ -40,20 +40,6 @@ class ForumCategory extends BaseForumCategory
         return $thread;
     }
 
-    public function incrementThreadCount($step = 1, $recursive = true)
-    {
-        $count = $this->getThreadCount();
-        $count+= $step;
-        $this->setThreadCount($count);
-        $this->save();
-
-        if ($recursive) {
-            foreach ($this->getParents() as $parent) {
-                $parent->incrementThreadCount($step, false);
-            }
-        }
-    }
-
     /**
      * Returns the list of parent categories.
      *
